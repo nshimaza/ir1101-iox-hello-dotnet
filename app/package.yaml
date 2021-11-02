@@ -1,0 +1,22 @@
+descriptor-schema-version: "2.2"
+info:
+  name: hello
+  description: buildkit.dockerfile.v0
+  version: latest
+app:
+  cpuarch: arm64
+  env:
+    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  resources:
+    cpu: "400"
+    memory: "128"
+    network:
+    - interface-name: eth0
+      ports: {}
+    profile: custom
+  startup:
+    rootfs: rootfs.tar
+    target:
+    - sh
+    - /loop.sh
+  type: docker
