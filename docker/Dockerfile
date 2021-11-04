@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0-focal-arm64v8 as build-env
+FROM mcr.microsoft.com/dotnet/sdk as build-env
 
 WORKDIR /root/hello
 RUN dotnet new console && \
